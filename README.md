@@ -42,4 +42,4 @@ website for nonphysical.io
 
     Select the gh-pages branch as the source.
 
-    Your site will be available at https://your-username.github.io/repository-name.
+    Your site will be available at https://<your-username>.github.io/<repository-name>.
