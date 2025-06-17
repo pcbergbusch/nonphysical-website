@@ -15,13 +15,15 @@ website for nonphysical.io
 
     Modify your package.json file:
 
-    "homepage": "https://your-username.github.io/repository-name",
+    "homepage": "https://<your-username>.github.io/<repository-name>",
     "scripts": {
       "predeploy": "npm run build",
-      "deploy": "gh-pages -d build"
+      "deploy": "gh-pages -d dist"
     }
 
-    Replace your-username with your GitHub username and repository-name with your repo name.
+    "predeploy" runs the build (e.g., using vite, or react-scripts) and places it in
+    the dist folder (vite) or build folder(react-scripts).
+    "deploy" then deploys the relevant folder to the gh-pages branch.Replace your-username with your GitHub username and repository-name with your repo name.
 
 3. Push Your Code to GitHub
 
