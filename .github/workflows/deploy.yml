@@ -46,16 +46,12 @@ jobs:
       - name: Create SPA-style 404.html
         run: |
           echo '<!DOCTYPE html><html><head><meta charset="utf-8"><script>sessionStorage.redirect=location.pathname+location.search+location.hash;</script><meta http-equiv="refresh" content="0.1; url=/nonphysical-website/"></head><body></body></html>' > dist/404.html
-      - name: Rename 404.html → index.html for fallback
-        run: |
-          cp dist/index.html dist/index.original.html
-          mv dist/404.html dist/index.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload dist repository
           path: './dist'
-      - name: Debug artifact structure
+      - name: Check artifact structure
         run: tree dist
       - name: Deploy to GitHub Pages
         id: deployment
