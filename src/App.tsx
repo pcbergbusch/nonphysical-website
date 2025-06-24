@@ -17,8 +17,9 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      {/* basename is required for GitHub Pages */}
-      <BrowserRouter basename="/nonphysical-website">
+      {/* basename=<repo_name> is only required when deploying to github.io */}
+      {/* <BrowserRouter basename="/nonphysical-website"> */}
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/terms" element={<Terms />} />
