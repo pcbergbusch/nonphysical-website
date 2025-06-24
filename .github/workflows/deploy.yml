@@ -41,8 +41,11 @@ jobs:
         run: npm run build -- --base=/nonphysical-website/
       - name: Setup Pages
         uses: actions/configure-pages@v3
-      - name: Add .nojekyll
+      - name: Add .nojekyll so that GitHub does not process files with Jekyll (most modern static sites don’t)
         run: echo "" > dist/.nojekyll
+      - name: Create SPA-friendly 404.html
+        run: |
+          echo '<!DOCTYPE html><html><head><meta charset="utf-8"><script>sessionStorage.redirect=location.pathname+location.search+location.hash;</script><meta http-equiv="refresh" content="0;url=/nonphysical-website/"></head><body></body></html>' > dist/404.html
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
