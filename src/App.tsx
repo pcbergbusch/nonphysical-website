@@ -17,6 +17,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
+      {/* basename is required for GitHub Pages */}
       <BrowserRouter basename="/nonphysical-website">
         <Routes>
           <Route path="/" element={<Index />} />
